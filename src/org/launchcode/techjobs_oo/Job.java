@@ -17,13 +17,13 @@ public class Job {
     //  other five fields. The second constructor should also call the first in order to initialize
     //  the 'id' field.
 
-    public Job(String product_tester, Employer acme, Location desert, PositionType quality_control, CoreCompetency persistence) {
+    public Job() {
         id = nextId;
         nextId++;
     }
 
-    public Job(int id, String name, Employer employer, Location location, PositionType positionType, CoreCompetency coreCompetency) {
-        this.id = id;
+    public Job( String name, Employer employer, Location location, PositionType positionType, CoreCompetency coreCompetency) {
+        this();
         this.name = name;
         this.employer = employer;
         this.location = location;
@@ -45,6 +45,18 @@ public class Job {
     public int hashCode() {
         return Objects.hash(id, name, employer, location, positionType, coreCompetency);
     }
+
+//    @Override
+//    public String toString() {
+//        return "JobTest{" +
+//                "id=" + id +
+//                ", Employer=" + Employer +
+//                ", name='" + name + '\'' +
+//                ", Location=" + Location +
+//                ", PositionType=" + PositionType +
+//                ", CoreCompetency=" + CoreCompetency +
+//                '}';
+//    }
 
 
     // TODO: Add getters for each field EXCEPT nextId. Add setters for each field EXCEPT nextID
