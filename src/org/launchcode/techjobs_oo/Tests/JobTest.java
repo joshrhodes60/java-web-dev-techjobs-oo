@@ -46,7 +46,7 @@ public class JobTest {
     public void testJobsForEquality() {
         job1 = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
         job2 = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
-        assertEquals(job1.equals(job2)== false);
+        Assert.assertEquals(false,job1.equals(job2));
     }
 
     private void assertEquals(boolean b) {
@@ -54,8 +54,27 @@ public class JobTest {
 
 
 
+    @Test
+    public void testForToString(){
+        job1 = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
+        Assert.assertEquals(  "JobTest{\nid=6, Employer=ACME, name='Product tester', Location=Desert, PositionType=Quality control, CoreCompetency=Persistence\n}", job1.toString());
+        job1 = new Job("Product tester", new Employer(""), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency(""));
+        Assert.assertEquals(  "JobTest{\nid=7, Employer=Data not available, name='Product tester', Location=Desert, PositionType=Quality control, CoreCompetency=Data not available\n}", job1.toString());
+    }
 
+    @Test
+    public void testFirstRequirement(){
+        job1 = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
+        Assert.assertEquals(  "JobTest{\nid=6, Employer=ACME, name='Product tester', Location=Desert, PositionType=Quality control, CoreCompetency=Persistence\n}", job1.toString());
 
+        System.out.println( "\n".isBlank() );
+    }
+
+    @Test
+    public void testSecondRequirement() {
+        job1 = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
+        Assert.assertEquals(  "\n ID: 6\n Name: Product tester\n Employer: ACME\n Location: Desert\n PositionType: Quality control\n CoreCompetency: Persistence\n", job1.toString());
+    }
 }
 
 

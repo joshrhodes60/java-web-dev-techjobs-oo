@@ -46,17 +46,51 @@ public class Job {
         return Objects.hash(id, name, employer, location, positionType, coreCompetency);
     }
 
-//    @Override
-//    public String toString() {
-//        return "JobTest{" +
+
+
+
+    @Override
+    public String toString() {
+        String emptyEmployer = employer.toString();
+        if(emptyEmployer.isEmpty()){
+            emptyEmployer = "Data not available";
+        }
+        String emptyName = name.toString();
+        if(emptyName.isEmpty()){
+            emptyName = "Data not available";
+        }
+        String emptyLocation = location.toString();
+        if(emptyLocation.isEmpty()){
+            emptyLocation = "Data not available";
+        }
+        String emptyCoreCompetency = coreCompetency.toString();
+        if(emptyCoreCompetency.isEmpty()){
+            emptyCoreCompetency = "Data not available";
+        }
+        String emptyPositionType = positionType.toString();
+        if(emptyPositionType.isEmpty()){
+            emptyPositionType= "Data not available";
+        }
+//        return "JobTest{" + '\n' +
 //                "id=" + id +
-//                ", Employer=" + Employer +
-//                ", name='" + name + '\'' +
-//                ", Location=" + Location +
-//                ", PositionType=" + PositionType +
-//                ", CoreCompetency=" + CoreCompetency +
+//                ", Employer=" + emptyEmployer +
+//                ", name='" + emptyName + '\'' +
+//                ", Location=" + emptyLocation +
+//                ", PositionType=" + emptyPositionType +
+//                ", CoreCompetency=" + emptyCoreCompetency +
+//                '\n' +
 //                '}';
-//    }
+
+            return '\n' +
+                " ID: " + id + '\n' +
+                " Name: " + emptyName + '\n' +
+                " Employer: " + emptyEmployer  + '\n'+
+                " Location: " + emptyLocation + '\n' +
+                " PositionType: " + emptyPositionType + '\n' +
+                " CoreCompetency: " + emptyCoreCompetency +
+                '\n'
+                ;
+    }
 
 
     // TODO: Add getters for each field EXCEPT nextId. Add setters for each field EXCEPT nextID
