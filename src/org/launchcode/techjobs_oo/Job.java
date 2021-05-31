@@ -51,25 +51,30 @@ public class Job {
 
     @Override
     public String toString() {
+        String emptyString = String.valueOf('\n').toString();
+        if (emptyString.isEmpty()) {
+          emptyString = "String is blank";
+        }
+
         String emptyEmployer = employer.toString();
-        if(emptyEmployer.isEmpty()){
+        if (emptyEmployer.isEmpty()) {
             emptyEmployer = "Data not available";
         }
         String emptyName = name.toString();
-        if(emptyName.isEmpty()){
+        if (emptyName.isEmpty()) {
             emptyName = "Data not available";
         }
         String emptyLocation = location.toString();
-        if(emptyLocation.isEmpty()){
+        if (emptyLocation.isEmpty()) {
             emptyLocation = "Data not available";
         }
         String emptyCoreCompetency = coreCompetency.toString();
-        if(emptyCoreCompetency.isEmpty()){
+        if (emptyCoreCompetency.isEmpty()) {
             emptyCoreCompetency = "Data not available";
         }
         String emptyPositionType = positionType.toString();
-        if(emptyPositionType.isEmpty()){
-            emptyPositionType= "Data not available";
+        if (emptyPositionType.isEmpty()) {
+            emptyPositionType = "Data not available";
         }
 //        return "JobTest{" + '\n' +
 //                "id=" + id +
@@ -80,7 +85,32 @@ public class Job {
 //                ", CoreCompetency=" + emptyCoreCompetency +
 //                '\n' +
 //                '}';
+//    }
 
+
+//    @Override
+//    public String toString() {
+//        String emptyEmployer = employer.toString();
+//        if (emptyEmployer.isEmpty()) {
+//            emptyEmployer = "Data not available";
+//        }
+//        String emptyName = name.toString();
+//        if (emptyName.isEmpty()) {
+//            emptyName = "Data not available";
+//        }
+//        String emptyLocation = location.toString();
+//        if (emptyLocation.isEmpty()) {
+//            emptyLocation = "Data not available";
+//        }
+//        String emptyCoreCompetency = coreCompetency.toString();
+//        if (emptyCoreCompetency.isEmpty()) {
+//            emptyCoreCompetency = "Data not available";
+//        }
+//        String emptyPositionType = positionType.toString();
+//        if (emptyPositionType.isEmpty()) {
+//            emptyPositionType = "Data not available";
+//        }
+//
             return '\n' +
                 " ID: " + id + '\n' +
                 " Name: " + emptyName + '\n' +
@@ -140,4 +170,7 @@ public class Job {
     public void setCoreCompetency(CoreCompetency coreCompetency) {
         this.coreCompetency = coreCompetency;
     }
+
+
+
 }
